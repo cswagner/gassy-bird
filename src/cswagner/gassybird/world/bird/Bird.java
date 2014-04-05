@@ -8,6 +8,7 @@ import cswagner.gassybird.world.World;
 public class Bird {
 	public Bird(World worldIn) {
 		_world = worldIn;
+		_numObstaclesPassed = 0;
 		
 		_position = new Vector2(Bird.STARTING_POSX, Bird.STARTING_POSY);
 		_velocity = new Vector2(Bird.HORIZONTAL_VELOCITY, 0.0f);			
@@ -18,6 +19,8 @@ public class Bird {
 	}
 	
 	public World getWorld() { return _world; }
+	public int getNumObstaclesPassed() { return _numObstaclesPassed; }
+	public void passObstacle() { _numObstaclesPassed++; }
 	public Vector2 getPosition() { return _position; }
 	public Vector2 getVelocity() { return _velocity; }	
 	public float getRadius() { return _radius; }	
@@ -25,9 +28,10 @@ public class Bird {
 	public BirdRenderer getRenderer() { return _renderer; }
 	
 	private World _world;
+	private int _numObstaclesPassed;
 	private Vector2 _position,
 					_velocity;					
-	private float _radius;				  
+	private float _radius;	
 	
 	private BirdController _controller;
 	private BirdRenderer _renderer;

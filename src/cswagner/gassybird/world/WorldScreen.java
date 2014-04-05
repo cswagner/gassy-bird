@@ -19,6 +19,7 @@ public class WorldScreen implements Screen {
 		_debugArtist = new ShapeRenderer();
 		
 		_debugText = new BitmapFont();
+		_debugText.scale(2.0f);
 		
 		InputManager.enable();
 		

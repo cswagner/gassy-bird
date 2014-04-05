@@ -1,5 +1,6 @@
 package cswagner.gassybird.world.bird;
 
+import cswagner.gassybird.GassyBird;
 import cswagner.gassybird.input.Point;
 import cswagner.gassybird.world.World;
 import cswagner.gassybird.world.obstacle.Obstacle;
@@ -9,7 +10,9 @@ public class BirdController {
 		_bird = birdIn;
 	}
 	
-	public void update(float delta) {					
+	public void update(float delta) {	
+		GassyBird.debugMessage = _bird.getNumObstaclesPassed() + "";
+		
 		if(_bird.getVelocity().y > Bird.TERMINAL_VELOCITY) {
 			_bird.getVelocity().y += Bird.GRAVITY_FORCE;
 		}

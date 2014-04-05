@@ -8,6 +8,7 @@ import cswagner.gassybird.world.World;
 public class Obstacle {
 	public Obstacle(World worldIn, int idIn, float horizontalPosIn) {
 		_world = worldIn;
+		_passedByBird = false;
 		
 		_id = idIn;
 		_position = new Vector2(horizontalPosIn, Obstacle.getValidVerticalPosition());
@@ -23,12 +24,15 @@ public class Obstacle {
 	}
 	
 	public World getWorld() { return _world; }
+	public boolean wasPassedByBird() { return _passedByBird; }
+	public void setPassedByBird(boolean flagIn) { _passedByBird = true; }
 	public int getID() { return _id; }
 	public Vector2 getPosition() { return _position; }
 	public ObstacleController getController() { return _controller; }
 	public ObstacleRenderer getRenderer() { return _renderer; }
 	
 	private World _world;
+	private boolean _passedByBird;
 	private int _id;
 	private Vector2 _position;
 	

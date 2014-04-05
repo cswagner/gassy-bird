@@ -10,8 +10,7 @@ public class WorldController {
 		_world = worldIn;
 	}
 	
-	public void update(float delta) {
-		GassyBird.debugMessage = _world.getState().toString();
+	public void update(float delta) {		
 		// check if the screen was pressed
 		Point screenClickPos = InputManager.getScreenClickPosition();
 		if(screenClickPos != null) {

@@ -15,6 +15,14 @@ public class ObstacleController {
 			if(_obstacle.getID() == 3) toFollow = _obstacle.getWorld().getObstacle(2);
 			_obstacle.getPosition().x = toFollow.getPosition().x + Obstacle.SPACING;
 			_obstacle.getPosition().y = Obstacle.getValidVerticalPosition();
+			_obstacle.setPassedByBird(false);
+		}
+		
+		// check if bird made it far enough through this obstacle to count towards score
+		if(!_obstacle.wasPassedByBird() && 
+		   (_obstacle.getPosition().x + (Obstacle.WIDTH * 0.5f)) <= _obstacle.getWorld().getBird().getPosition().x) {
+			_obstacle.setPassedByBird(true);
+			_obstacle.getWorld().getBird().passObstacle();
 		}
 	}
 	

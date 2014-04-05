@@ -32,7 +32,7 @@ public class WorldRenderer {
 		// draw ground
 		artist.identity();
 		artist.setColor(0.0f, 1.0f, 0.0f, 1.0f);
-		artist.rect(0.0f, 0.0f, Gdx.graphics.getWidth(), World.GROUND_HEIGHT);
+		artist.rect(0.0f, 0.0f, Gdx.graphics.getWidth(), World.GROUND_HEIGHT);	
 	}
 	
 	private World _world;

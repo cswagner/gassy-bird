@@ -1,6 +1,7 @@
 package cswagner.gassybird.world;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 
 import cswagner.gassybird.world.bird.Bird;
 import cswagner.gassybird.world.obstacle.Obstacle;
@@ -26,7 +27,7 @@ public class World {
 		if(whichOne == 2) return _obstacle2;
 		if(whichOne == 3) return _obstacle3;
 		return null;
-	}
+	}	
 	public WorldController getController() { return _controller; }
 	public WorldRenderer getRenderer() { return _renderer; }
 	
@@ -42,11 +43,11 @@ public class World {
 		FINISHING,         // user has hit an obstacle and no more input should be taken
 		FINISHED           // user has hit the ground
 	}
-	private State _state;
+	private State _state;	
 	private Bird _bird;
 	private Obstacle _obstacle1,
 					 _obstacle2,
-					 _obstacle3;
-	private WorldController _controller;	// controller
-	private WorldRenderer _renderer;		// view
+					 _obstacle3;	
+	private WorldController _controller;
+	private WorldRenderer _renderer;
 }
